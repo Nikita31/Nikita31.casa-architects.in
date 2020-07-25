@@ -18,12 +18,11 @@
 
 
 	var fullHeight = function() {
-
-		$('.js-fullheight').css('height', $(window).height());
+		const height = $(window).height() * 0.8;
+		$('.js-fullheight').css('height', height);
 		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
+			$('.js-fullheight').css('height', height);
 		});
-
 	};
 	fullHeight();
 
@@ -321,7 +320,12 @@
 	  'autoclose': true
 	});
 
-
+	$(document).on('click', '.owl-stage-outer .arrow.down', (e) => {
+		const $next = $(e.target).closest('section').next('section');
+		$('html, body').animate({
+			scrollTop: $next.offset().top - 20
+		}, 500);
+	});
 
 
 })(jQuery);
