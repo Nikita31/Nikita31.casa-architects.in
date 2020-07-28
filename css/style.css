@@ -8742,7 +8742,11 @@ h1, h2, h3, h4, h5,
   width: 100%;
   display: block;
   overflow: hidden;
-  z-index: 0; }
+  z-index: 0;
+  max-height: 245px;
+  padding: 2px;
+  box-sizing: border-box;
+}
   .project:after {
     position: absolute;
     top: 0;
